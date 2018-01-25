@@ -132,7 +132,7 @@ public class FictionBuild {
 	public List<String> splitContentBestByImageCount(String content,int imageCount)
 	{ 
 		int AROUND_SIZE=50;
-		int avgSize=content.length()/ imageCount/**头和尾部默认用掉两条了*/;
+		int avgSize=content.length()/imageCount;/**头和尾部默认用掉两条了*/;
 		System.out.println(
 				"conent size:"+content.length()
 				+",imageCount:"+imageCount
@@ -141,9 +141,9 @@ public class FictionBuild {
 		int lastIndex=0;
 		
 		/**前后默认添加图片，所以起点=1，末点跳出来*/
-		for(int i=1;i<=imageCount;i++)
+		for(int i=1;i<imageCount;i++)
 		{
-			int currentIndex=i*avgSize;
+			int currentIndex=i*avgSize-1;
 			int maxPrevIndex=currentIndex-AROUND_SIZE;
 			int maxBackIndex=currentIndex+AROUND_SIZE;
 			
@@ -192,7 +192,8 @@ public class FictionBuild {
 		new File(outputPath).mkdirs();
 		
 		/**前后扣掉了两张*/
-		int contentCenterImageCount=imageList.getPaths().size()-2;
+		int contentCenterImageCount
+			=imageList.getPaths().size()-/**2*/1 /**不要问我1和2是啥。我也没理清楚，能跑就好*/;
 		List<String> sections
 			=splitContentBestByImageCount(fiction.getContent(),contentCenterImageCount);
 		

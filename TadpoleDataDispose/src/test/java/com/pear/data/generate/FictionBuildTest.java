@@ -21,7 +21,8 @@ public class FictionBuildTest {
 		for(String subContent:splitContents) 
 		{
 			System.out.println("\n\n\n\n\n\n");
-			System.out.println("*************************************");
+			System.out.println("size:"+subContent.length()
+			+"*************************************");
 			System.out.println(subContent);
 		} 
 	}	
@@ -60,6 +61,20 @@ public class FictionBuildTest {
 		build.createdOnce(fiction.get(0),imageList.get(0),publicDate,outputPath);
 	}
 	
+	
+	void numberAvgTest() 
+	{
+		int number=3499;
+		int count=9;
+		
+		int avg=number/count;
+		for(int i=1;i<count;i++)
+		{
+			System.out.println(avg*i);
+		}
+		
+	}
+	
 	public static void main(String[] args) throws IOException
 	{
 		FictionBuildTest build=new FictionBuildTest();
@@ -69,6 +84,7 @@ public class FictionBuildTest {
 		//build.getImageListByPath();
 
 		build.createdOnce();
+		//build.numberAvgTest() ;
 	}
 	
 }
