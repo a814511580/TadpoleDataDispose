@@ -29,6 +29,15 @@
 	  <version>2.4</version>
 	  <classifier>jdk15</classifier>
 	</dependency>
+	
+	<!-- 另外一个最常用的json -->
+	<!-- https://mvnrepository.com/artifact/org.json/json -->
+	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20170516</version>
+	</dependency>
+		
 		
   </dependencies>
 </project>

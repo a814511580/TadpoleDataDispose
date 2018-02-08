@@ -54,7 +54,6 @@ public class FileUtils {
 		read.close();
 		return content.toString(); 
 	} 
-	
 
 	/**
 	 * 把文本写出到文件去
@@ -68,4 +67,40 @@ public class FileUtils {
 		fileWriter.close();
 	}
 	
+	/**
+	 * 填充指定路径下的所有文件夹名称
+	 * @param list 填充到的集合
+	 * @param parentFile 父类的路径，参考去除的路径
+	 * @param file 带遍历的路径
+	 * */
+	public static void fillRelativeFolderPathList(
+			List<String> list,
+			File parentFile,
+			File file)
+	{
+		if(!file.exists()||!file.isDirectory())
+			return;
+        File files[] = file.listFiles();
+        for (int i = 0; i < files.length; i++) {
+            File f = files[i];
+            if (f.isDirectory()) {
+            	fillRelativeFolderPathList(list,parentFile,f);
+            	String subPath=f.getPath();
+            	String parentPath=parentFile.getPath();
+            	String subFolderRelativePath=subPath.substring(parentPath.length()+1);
+            	subFolderRelativePath=subFolderRelativePath.replace("\\", "/");
+            	list.add(subFolderRelativePath);
+            }else
+            	continue;
+        }
+	}
+	
+	public static void main(String[] args)
+	{
+		List<String> list=new ArrayList<>();
+		File file=new File("F:\\Test--III\\test25\\己用");
+		fillRelativeFolderPathList(list,file,file);
+		for(String path:list)
+			System.out.println(path);
+	}
 }
