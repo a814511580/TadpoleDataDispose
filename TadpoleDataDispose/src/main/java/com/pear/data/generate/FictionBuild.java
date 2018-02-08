@@ -274,12 +274,14 @@ public class FictionBuild {
 	
 	public static void main(String[] args) throws IOException
 	{
-		String fictionPath="E:\\更多常用项目\\雪梨\\小说\\小说文本";
-		String imagePath="E:\\更多常用项目\\雪梨\\小说\\小说图片";
+		String fictionPath="F:\\自己项目\\雪梨电影\\数据\\数据已准备\\小说文本";
+		String imagePath="F:\\自己项目\\雪梨电影\\数据\\数据已准备\\小说图片";
 		long startDate=System.currentTimeMillis();
-		String outputPath="E:\\更多常用项目\\雪梨\\小说\\小说整合";
+		String outputPath="F:\\自己项目\\雪梨电影\\数据\\数据已准备\\小说生产";
 		FictionBuild fiction=new FictionBuild(fictionPath,imagePath,startDate,outputPath); 
 		fiction.build();  
+		
+		
 	}
 
 }

@@ -41,6 +41,13 @@ public class ImageClassifyBuild {
 			File[] allOnceData = calssify.listFiles();
 			for (File onceData : allOnceData) {
 				String title = onceData.getName();
+				if(title.indexOf("_")!=-1)
+					title=title.substring(title.indexOf("_")+1); 
+				if(title.indexOf("【")!=-1)
+					title=title.substring(0,title.lastIndexOf("【"));
+				if(title.indexOf("[")!=-1)
+					title=title.substring(0,title.lastIndexOf("["));
+				
 				File[] onceImages = onceData.listFiles();
 				List<String> paths = new ArrayList<>();
 				for (File onceImage : onceImages)
@@ -83,6 +90,7 @@ public class ImageClassifyBuild {
 		log.debug("开始生产图片");
 		for(ImageClassifyVo imageClassifyVo:imageClassifyVos) 
 		{
+			System.out.println("imageClassifyVo:"+imageClassifyVo.getClassify());
 			buildClassifyByDate(startDate, imageClassifyVo, outputPath);
 		}
 		log.debug("生产小说图片");
@@ -100,6 +108,7 @@ public class ImageClassifyBuild {
 	void buildClassifyByDate(long date, ImageClassifyVo imageClassifyVo, String outputPath) throws IOException {
 		for(ImageListVo images:imageClassifyVo.getImages()) 
 		{
+			System.out.println("images:"+images.getTitle());
 			String currentPath=outputPath
 					+File.separator+new SimpleDateFormat("yyyy-MM-dd").format(new Date(date))
 					+File.separator+"图片"+File.separator+imageClassifyVo.getClassify()+File.separator;
@@ -125,9 +134,9 @@ public class ImageClassifyBuild {
 	
 	public static void main(String[] args) throws IOException, IllegalAccessException
 	{
-		String loadPath="F:\\自己项目\\雪梨电影\\数据\\数据待整理\\图片"; 
+		String loadPath="F:\\自己项目\\雪梨电影\\数据\\数据已准备\\图片\\已挑选"; 
 		long startDate=System.currentTimeMillis();
-		String outputPath="F:\\自己项目\\雪梨电影\\数据\\数据待整理\\生产图片";
+		String outputPath="F:\\自己项目\\雪梨电影\\数据\\数据已准备\\图片\\生产";
 		ImageClassifyBuild build=new ImageClassifyBuild();  
 		List<ImageClassifyVo> datas=build.getAllClassify(loadPath);
 		build.buildClassify(datas,
