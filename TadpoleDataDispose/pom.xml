@@ -38,6 +38,20 @@
 	    <version>20170516</version>
 	</dependency>
 		
-		
+	<!-- 著名的xml解析器 -->
+	<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+	<dependency>
+	    <groupId>dom4j</groupId>
+	    <artifactId>dom4j</artifactId>
+	    <version>1.6.1</version>
+	</dependency>
+	<!-- xml解析高级辅助 -->
+	<!-- https://mvnrepository.com/artifact/jaxen/jaxen -->
+	<dependency>
+	    <groupId>jaxen</groupId>
+	    <artifactId>jaxen</artifactId>
+	    <version>1.1.6</version>
+	</dependency>
+			
   </dependencies>
 </project>

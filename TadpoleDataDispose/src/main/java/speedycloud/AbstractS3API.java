@@ -68,7 +68,7 @@ public class AbstractS3API {
         byte[] data = signString.getBytes();
         
         String value = Base64.getEncoder().encodeToString(mac.doFinal(data));
-        System.out.println(value);
+        //System.out.println(value);
         return value;
     }
 
@@ -159,7 +159,7 @@ public class AbstractS3API {
             dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
             Date date = new Date();
             String requestDate = dateFormat.format(date);
-            System.out.println(requestDate);
+            //System.out.println(requestDate);
             httpURLConnection.setRequestProperty("Date", requestDate);
             try {
                 httpURLConnection.setRequestProperty("Authorization", "AWS " + this.access_key + ":" + createSign(method, "", "", requestDate, url));
@@ -172,8 +172,8 @@ public class AbstractS3API {
 //                httpURLConnection.disconnect();
             }
             httpURLConnection.setConnectTimeout(10000);
-            System.out.println(httpURLConnection.getResponseCode());
-            System.out.println(httpURLConnection.getContentLengthLong());
+            //System.out.println(httpURLConnection.getResponseCode());
+            //System.out.println(httpURLConnection.getContentLengthLong());
             BufferedReader reader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), "utf-8"));
             String content = "";
             String line;
@@ -214,7 +214,7 @@ public class AbstractS3API {
                 httpURLConnection.disconnect();
             }
             httpURLConnection.setConnectTimeout(10000);
-            System.out.println(httpURLConnection.getResponseCode());
+            //System.out.println(httpURLConnection.getResponseCode());
             BufferedReader reader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), "utf-8"));
             String content = "";
             String line;
@@ -243,7 +243,7 @@ public class AbstractS3API {
             dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
             Date date = new Date();
             String requestDate = dateFormat.format(date);
-            System.out.println(requestDate);
+            //System.out.println(requestDate);
             httpURLConnection.setRequestProperty("Date", requestDate);
             try {
                 httpURLConnection.setRequestProperty("Authorization", "AWS " + this.access_key + ":" + createSign(method, "", "", requestDate, url));
@@ -277,7 +277,7 @@ public class AbstractS3API {
             dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
             Date date = new Date();
             String requestDate = dateFormat.format(date);
-            System.out.println(requestDate);
+            //System.out.println(requestDate);
             httpURLConnection.setRequestProperty("Date", requestDate);
       
             byte[] requestStringBytes = data.getBytes();
@@ -291,8 +291,8 @@ public class AbstractS3API {
             
 
             httpURLConnection.setConnectTimeout(10000);
-            System.out.println(httpURLConnection.getResponseCode());
-            System.out.println(httpURLConnection.getContentLengthLong());
+            //System.out.println(httpURLConnection.getResponseCode());
+            //System.out.println(httpURLConnection.getContentLengthLong());
             BufferedReader reader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), "utf-8"));
             String content = "";
             String line;
