@@ -1,9 +1,7 @@
 package maomi.utils.encrypt;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import java.net.URLEncoder;
-import java.util.Base64;
 
 public class EncodeUtils {
 	private EncodeUtils() {
