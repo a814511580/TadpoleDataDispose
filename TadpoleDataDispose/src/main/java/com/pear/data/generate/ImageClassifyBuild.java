@@ -12,7 +12,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.pear.common.utils.FileUtils;
-import com.pear.common.utils.ThumbnailatorUtils; 
+import com.pear.common.utils.media.ThumbnailatorUtils;
 import com.pear.data.vo.ImageClassifyVo;
 import com.pear.data.vo.ImageListVo;
  

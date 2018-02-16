@@ -34,6 +34,26 @@ public class FileUtils {
 		return list;
 	}
 	
+	/**
+	 * 递归查询文件下的所有文件路径
+	 * @param file 待查找的文件路径
+	 * @param findSub 是否递归把子节点也找出来
+	 * */
+	public static List<String> getAllFilesByRecursionFolder(List<String> list,File folder)
+	{		
+		File files[] = folder.listFiles();
+		for (int i = 0; i < files.length; i++) {
+			File subFile = files[i];
+			if (!subFile.isFile())
+			{
+				getAllFilesByRecursionFolder(list,subFile);
+				continue;
+			}
+			list.add(subFile.getPath());
+		}
+		return list;
+	}
+	
 
 	/**
 	 * 从指定的文件中读取文本数据
@@ -95,12 +115,5 @@ public class FileUtils {
         }
 	}
 	
-	public static void main(String[] args)
-	{
-		List<String> list=new ArrayList<>();
-		File file=new File("F:\\Test--III\\test25\\己用");
-		fillRelativeFolderPathList(list,file,file);
-		for(String path:list)
-			System.out.println(path);
-	}
+
 }

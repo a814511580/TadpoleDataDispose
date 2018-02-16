@@ -1,4 +1,4 @@
-package com.pear.common.utils;
+package com.pear.common.utils.media;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package com.pear.common.utils;
+package com.pear.common.utils.media;
 
 import java.io.File;
 import java.text.SimpleDateFormat; 
@@ -19,12 +19,20 @@ public class ReadVideoUtils {
 	 * @throws EncoderException 
 	 * @throws InputFormatException 
 	 * */
-	public static String getDuration(String path) throws InputFormatException, EncoderException {
+	public static Long getDuration(String path) throws InputFormatException, EncoderException {
         File source = new File(path);
         Encoder encoder = new Encoder();
         MultimediaInfo m = encoder.getInfo(source);
-        long duration = m.getDuration();
-        
+        return m.getDuration(); 
+    }
+	
+	/**
+	 * 获取电影的时长
+	 * @throws EncoderException 
+	 * @throws InputFormatException 
+	 * */
+	public static String getDurationString(String path) throws InputFormatException, EncoderException {
+        long duration = getDuration(path); 
         /**大于1小时，暂时时分秒，否则暂时分秒即可*/
         final int onceHourMilli=1000*60*60;
         if(duration>=onceHourMilli)
