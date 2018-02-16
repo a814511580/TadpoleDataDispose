@@ -2,6 +2,8 @@ package com.pear.common.utils;
 
 import java.io.IOException;
 
+import com.pear.common.utils.media.ReadVideoUtils;
+
 import it.sauronsoftware.jave.EncoderException;
 import it.sauronsoftware.jave.InputFormatException;
 
