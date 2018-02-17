@@ -1,4 +1,4 @@
-package com.pear.common.utils;
+package com.pear.common.utils.system;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,8 +20,9 @@ public class CmdUtils {
 	 */
 	public static String execute(String command) {
 		try {
+			//System.out.println("command:"+command);
 			StringBuffer sb = new StringBuffer();
-			Process pro = Runtime.getRuntime().exec("cmd /c " + command);
+			Process pro = Runtime.getRuntime().exec("cmd /c start " + command);
 			BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream()));
 			String msg = null;
 			while ((msg = br.readLine()) != null) {

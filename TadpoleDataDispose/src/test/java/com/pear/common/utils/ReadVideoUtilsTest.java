@@ -23,7 +23,7 @@ public class ReadVideoUtilsTest {
 	
 	public static void main(String[] args) throws IOException, InputFormatException, EncoderException 
 	{
-		String value=ReadVideoUtils.getDuration("C:\\VoiseUpdate\\user1\\data\\vedio\\data\\test.mp4");
+		String value=ReadVideoUtils.getDurationString("C:\\VoiseUpdate\\user1\\data\\vedio\\data\\test.mp4");
 		System.out.println(value);
 	}
 	

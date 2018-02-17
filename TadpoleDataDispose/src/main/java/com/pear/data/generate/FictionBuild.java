@@ -13,8 +13,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import com.pear.common.utils.FileUtils;
 import com.pear.common.utils.media.ThumbnailatorUtils;
+import com.pear.common.utils.system.FileUtils;
 import com.pear.data.vo.FictionVo;
 import com.pear.data.vo.ImageListVo;
 

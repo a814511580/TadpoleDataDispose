@@ -17,7 +17,7 @@ import org.dom4j.io.SAXReader;
 import org.jaxen.JaxenException;
 import org.jaxen.dom4j.Dom4jXPath;
 
-import com.pear.common.utils.FileUtils;
+import com.pear.common.utils.system.FileUtils;
 import com.pear.data.vo.ImageListVo;
 
 /**

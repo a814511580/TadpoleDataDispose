@@ -3,7 +3,7 @@ package com.pear.cdn.impl;
 import java.io.IOException;
 
 import com.pear.cdn.services.PrefetchService;
-import com.pear.common.utils.FileUtils;
+import com.pear.common.utils.system.FileUtils;
 
 public class PrefetchDataResourceSimulationImplTest {
 	
