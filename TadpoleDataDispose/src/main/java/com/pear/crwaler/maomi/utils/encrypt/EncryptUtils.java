@@ -1,4 +1,4 @@
-package maomi.utils.encrypt;
+package com.pear.crwaler.maomi.utils.encrypt;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
