@@ -1,11 +1,11 @@
-package speedycloud;
+package com.pear.cdn.speedycloud;
 
 /*
- *         bucket: Ä¿±êÍ°
-        host: Ä¿±êÍ°µÄhost
-        resolutions: ·Ö±æÂÊ£¬¶à¸öÓÃ¡°£¬¡±·Ö¸ô£¬ÀýÈç£º480P1,480P2,720P
-        callback_url: »Øµ÷url
-        source_id: ÉÏ¸ö½Ó¿Ú·µ»ØµÄsource_id
+ *         bucket: Ä¿ï¿½ï¿½Í°
+        host: Ä¿ï¿½ï¿½Í°ï¿½ï¿½host
+        resolutions: ï¿½Ö±ï¿½ï¿½Ê£ï¿½ï¿½ï¿½ï¿½ï¿½Ã¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç£º480P1,480P2,720P
+        callback_url: ï¿½Øµï¿½url
+        source_id: ï¿½Ï¸ï¿½ï¿½Ó¿Ú·ï¿½ï¿½Øµï¿½source_id
  * */
 
 public class TranscodeFinal {

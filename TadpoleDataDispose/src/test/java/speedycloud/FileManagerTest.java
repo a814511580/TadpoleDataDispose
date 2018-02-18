@@ -1,5 +1,7 @@
 package speedycloud;
 
+import com.pear.cdn.speedycloud.FileManager;
+
 public class FileManagerTest { 
 	
 	static FileManager fileManager=new FileManager(

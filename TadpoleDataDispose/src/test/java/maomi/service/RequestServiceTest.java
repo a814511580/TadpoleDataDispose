@@ -1,5 +1,7 @@
 package maomi.service;
 
+import com.pear.crwaler.maomi.servoce.RequestService;
+
 public class RequestServiceTest {
 
 	

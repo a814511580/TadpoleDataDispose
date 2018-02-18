@@ -1,4 +1,4 @@
-package speedycloud;
+package com.pear.cdn.speedycloud;
 /*
  * {"source_id": "404dbfe2-d66a-11e7-a00b-000c29b58aad", "status": "Success"}
  

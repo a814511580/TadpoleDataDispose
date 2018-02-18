@@ -1,4 +1,4 @@
-package speedycloud;
+package com.pear.cdn.speedycloud;
 
 import org.json.JSONArray;
 

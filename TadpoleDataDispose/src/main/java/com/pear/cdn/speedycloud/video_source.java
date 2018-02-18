@@ -1,12 +1,12 @@
-package speedycloud;
+package com.pear.cdn.speedycloud;
 
 import org.json.JSONException;
 
 /*
-        url: 已上传到对象存储的对象的ur了（必填）
-        address: 房源的地址
-        bucket: 目标桶
-        host: 目标桶的host
+        url: 锟斤拷锟较达拷锟斤拷锟斤拷锟斤拷娲拷亩锟斤拷锟斤拷ur锟剿ｏ拷锟斤拷锟筋）
+        address: 锟斤拷源锟侥碉拷址
+        bucket: 目锟斤拷桶
+        host: 目锟斤拷桶锟斤拷host
 
  * */
 
