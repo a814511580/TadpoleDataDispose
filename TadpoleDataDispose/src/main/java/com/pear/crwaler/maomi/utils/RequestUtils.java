@@ -22,7 +22,7 @@ public class RequestUtils {
 	 * @param paramObj 参数json组
 	 * @param callback 处理结果回调
 	 * */
-	public void getPostData(String url, JSONObject paramObj,final StringCallback callback) {
+	public static void getPostData(final String url,final JSONObject paramObj,final StringCallback callback) {
 		try {
 			String dataParam = AesEncryptionUtil.encrypt(
 					paramObj.toString(), 
@@ -39,17 +39,26 @@ public class RequestUtils {
 				public void onError(Call paramAnonymousCall, Exception paramAnonymousException, int paramAnonymousInt) {
 					System.out.println("请求出错了");
 					System.out.println(paramAnonymousException.toString());
-					callback.onError(paramAnonymousCall, paramAnonymousException,paramAnonymousInt); 
+					//报错是吧，服务器正在维护，确认猫咪也没办法进去，这里无限循环执行就行了。
+					System.out.println("报错是吧，服务器正在维护，确认猫咪也没办法进去，这里无限循环执行就行了。"); 
+					//睡眠10分钟
+					try {
+						Thread.sleep(60*10000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					getPostData(url,paramObj,callback);
+					//callback.onError(paramAnonymousCall, paramAnonymousException,paramAnonymousInt); 
 				}
 
 				public void onResponse(String response, int paramAnonymousInt) {
 					try {
 						JSONObject jsonObj = new JSONObject(AesEncryptionUtil.decrypt(response,
 								"625202f9149maomi", "5efd3f6060emaomi"));
-						System.out.println("jsonObj:" + jsonObj.toString());
+						//System.out.println("jsonObj:" + jsonObj.toString());
 						//int code = paramAnonymousInt = jsonObj.getInt("code");
 						//System.out.println("code:" + code);
-						String data=jsonObj.getString("data").toString();
+						String data=jsonObj.getJSONObject("data").toString();
 						callback.onResponse(data, paramAnonymousInt); 
 					} catch (JSONException exp) {
 						exp.printStackTrace();
