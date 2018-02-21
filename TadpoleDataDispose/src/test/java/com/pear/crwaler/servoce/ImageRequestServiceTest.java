@@ -23,16 +23,15 @@ public class ImageRequestServiceTest extends ImageRequestService{
 		List<ImageListVo> list=new ImageRequestService().getImageList("9", 2);
 		System.out.println(list);
 	} 
-	
+	  
 	static void disposeByType() throws InterruptedException
 	{
 		String savePath="F:\\数据抓取\\猫咪\\图片";
-		///113
+		new SmallCatByImageCrwaler().disposeByType(savePath,new SmallcatFriendTypeVo("清纯唯美","30"),16);
+		new SmallCatByImageCrwaler().disposeByType(savePath,new SmallcatFriendTypeVo("美腿丝袜","10"),32);
+		new SmallCatByImageCrwaler().disposeByType(savePath,new SmallcatFriendTypeVo("卡通动漫","11"),33);
 		new SmallCatByImageCrwaler().disposeByType(savePath,new SmallcatFriendTypeVo("原创自拍","5"),558);
-		new SmallCatByImageCrwaler().disposeByType(savePath,new SmallcatFriendTypeVo("亚洲色图","6"),106);
-		new SmallCatByImageCrwaler().disposeByType(savePath,new SmallcatFriendTypeVo("美腿丝袜","10"));
-		new SmallCatByImageCrwaler().disposeByType(savePath,new SmallcatFriendTypeVo("清纯唯美","30"));
-		new SmallCatByImageCrwaler().disposeByType(savePath,new SmallcatFriendTypeVo("卡通动漫","11"));
+		new SmallCatByImageCrwaler().disposeByType(savePath,new SmallcatFriendTypeVo("亚洲色图","6"),420);
 	}
 	
 	

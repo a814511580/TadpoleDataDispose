@@ -11,9 +11,7 @@ import com.zhy.http.okhttp.callback.StringCallback;
 import okhttp3.Call;
 import okhttp3.Request;
 
-public class Test {
-
-
+public class Test { 
   
 	public void getPostData(String url, JSONObject paramObj) {
 		try {
