@@ -33,6 +33,13 @@ public class FictionVo {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	@Override
+	public String toString() {
+		return "FictionVo [title=" + title + ", content=" + content + "]\n";
 	} 
+	
+	
 	
 }

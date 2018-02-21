@@ -32,5 +32,12 @@ public class ImageListVo {
 	public void setPaths(List<String> paths) {
 		this.paths = paths;
 	}
+
+	@Override
+	public String toString() {
+		return "ImageListVo [title=" + title + ", paths=" + paths + "]\n";
+	}
+	
+	
 	
 }

@@ -10,6 +10,14 @@ import com.pear.cdn.interfaces.PrefetchDataResourceInteface;
  * */
 public class PrefetchDataResourceSimulationImpl extends PrefetchDataResourceInteface{
  
+	protected List<String> getCommonStaticUse()
+	{
+		return new ArrayList<String>() 
+		{{
+			add("/data/introduction/introduction.jpg");
+		}};
+	}
+	
 	protected  List<String> getVideo(long startTime,long endTime)
 	{
 		return new ArrayList<String>() 

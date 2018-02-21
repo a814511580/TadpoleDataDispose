@@ -3,7 +3,7 @@ package com.pear.data.generate;
 import java.io.IOException;
 import java.util.List;
 
-import com.pear.common.utils.FileUtils;
+import com.pear.common.utils.system.FileUtils;
 import com.pear.data.config.SystemConfig;
 import com.pear.data.vo.FictionVo;
 import com.pear.data.vo.ImageListVo;
